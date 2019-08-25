@@ -6,7 +6,7 @@
 #+TAGS: layer|web service
 
 # The maximum height of the logo should be 200 pixels.
-[[img/eos.png]]
+# [[img/eos.png]]
 
 # TOC links should be GitHub style anchors.
 * Table of Contents                                        :TOC_4_gh:noexport:
@@ -20,22 +20,32 @@
   anything possible inside emacs.
 
 ** Features:
-  - Hackernews reader with hnreader
-  - Search and read stack exchange with emacs-howdoyou
+  - Hackernews reader with hnreader https://github.com/thanhvg/emacs-hnreader
+  - Search and read stack exchange with emacs-howdoyou https://github.com/thanhvg/emacs-howdoyou
 
 * Install
+Clone this repo to you spacemacs private layer location:
+
+#+begin_example sh
+git clone https://github.com/thanhvg/spacemacs-eos ~/.emacs.d/private/eos
+#+end_example
+
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
 add =eos= to the existing =dotspacemacs-configuration-layers= list in this
 file.
 
 * Key bindings
 
-| Key Binding | Description    |
-|-------------+----------------|
-| ~SPC x x x~ | Does thing01   |
-
-# Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
-# Examples:
-# [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
-# [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
-# If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
+| Key Binding | Description                    |
+|-------------+--------------------------------|
+| ~SPC y y~   | howdoyou-query                 |
+| ~SPC y n~   | howdoyou-next-link             |
+| ~SPC y r~   | howdoyou-reload-link           |
+| ~SPC y 1~   | howdoyou-go-back-to-first-link |
+| ~SPC y p~   | howdoyou-previous-link         |
+| ~SPC y h n~ | hnreader-news                  |
+| ~SPC y h p~ | hnreader-past                  |
+| ~SPC y h m~ | hnreader-more                  |
+| ~SPC y h s~ | hnreader-show                  |
+| ~SPC y h b~ | hnreader-back                  |
+| ~SPC y h a~ | hnreader-ask                   |

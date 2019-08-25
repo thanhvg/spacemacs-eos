@@ -76,4 +76,16 @@ Each entry is either:
       (spacemacs/set-leader-keys "y1" #'howdoyou-go-back-to-first-link)
       (spacemacs/set-leader-keys "yp" #'howdoyou-previous-link))))
 
+(defun eos/init-hnreader ()
+  (use-package hnreader
+    :defer t
+    :init
+    (progn
+      (spacemacs/declare-prefix "yh" "hackernews")
+      (spacemacs/set-leader-keys "yhn" #'hnreader-news)
+      (spacemacs/set-leader-keys "yhp" #'hnreader-past)
+      (spacemacs/set-leader-keys "yhm" #'hnreader-more)
+      (spacemacs/set-leader-keys "yhs" #'hnreader-show)
+      (spacemacs/set-leader-keys "yhb" #'hnreader-back)
+      (spacemacs/set-leader-keys "yha" #'hnreader-ask))))
 ;;; packages.el ends here

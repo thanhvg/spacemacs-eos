@@ -70,11 +70,12 @@ Each entry is either:
     :defer t
     :init
     (progn
-      (spacemacs/set-leader-keys "yy" #'howdoyou-query)
-      (spacemacs/set-leader-keys "yn" #'howdoyou-next-link)
-      (spacemacs/set-leader-keys "yr" #'howdoyou-reload-link)
-      (spacemacs/set-leader-keys "y1" #'howdoyou-go-back-to-first-link)
-      (spacemacs/set-leader-keys "yp" #'howdoyou-previous-link))))
+      (spacemacs/set-leader-keys
+        "yy" #'howdoyou-query
+        "yn" #'howdoyou-next-link
+        "yr" #'howdoyou-reload-link
+        "y1" #'howdoyou-go-back-to-first-link
+        "yp" #'howdoyou-previous-link))))
 
 (defun eos/init-hnreader ()
   (use-package hnreader
@@ -82,10 +83,11 @@ Each entry is either:
     :init
     (progn
       (spacemacs/declare-prefix "yh" "hackernews")
-      (spacemacs/set-leader-keys "yhn" #'hnreader-news)
-      (spacemacs/set-leader-keys "yhp" #'hnreader-past)
-      (spacemacs/set-leader-keys "yhm" #'hnreader-more)
-      (spacemacs/set-leader-keys "yhs" #'hnreader-show)
-      (spacemacs/set-leader-keys "yhb" #'hnreader-back)
-      (spacemacs/set-leader-keys "yha" #'hnreader-ask))))
+      (spacemacs/set-leader-keys
+        "yhn" #'hnreader-news
+        "yhp" #'hnreader-past
+        "yhm" #'hnreader-more
+        "yhs" #'hnreader-show
+        "yhb" #'hnreader-back
+        "yha" #'hnreader-ask))))
 ;;; packages.el ends here

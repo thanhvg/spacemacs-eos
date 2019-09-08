@@ -31,13 +31,13 @@
 
 (defconst eos-packages
   '(
-    (howdoyou :location (recipe
-                         :fetcher github
-                         :repo "thanhvg/emacs-howdoyou"))
+    ;; (howdoyou :location (recipe
+    ;;                      :fetcher github
+    ;;                      :repo "thanhvg/emacs-howdoyou"))
+    howdoyou
     (hnreader :location (recipe
                          :fetcher github
-                         :repo "thanhvg/emacs-hnreader"))
-    )
+                         :repo "thanhvg/emacs-hnreader")))
   "The list of Lisp packages required by the eos layer.
 
 Each entry is either:

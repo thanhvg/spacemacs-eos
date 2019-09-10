@@ -2,8 +2,8 @@
 ;;
 ;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
 ;;
-;; Author: Thanh Vuong <thanh@x230>
-;; URL: https://github.com/syl20bnr/spacemacs
+;; Author: Thanh Vuong <thanhvg@gmail.com>
+;; URL: https://github.com/thanhvg
 ;;
 ;; This file is not part of GNU Emacs.
 ;;

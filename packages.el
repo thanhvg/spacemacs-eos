@@ -87,6 +87,7 @@ Each entry is either:
         "yhp" #'hnreader-past
         "yhm" #'hnreader-more
         "yhs" #'hnreader-show
+        "yhc" #'hnreader-comment
         "yhb" #'hnreader-back
         "yha" #'hnreader-ask))))
 ;;; packages.el ends here

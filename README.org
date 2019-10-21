@@ -38,14 +38,15 @@ file.
 
 | Key Binding | Description                    |
 |-------------+--------------------------------|
-| ~SPC y y~   | howdoyou-query                 |
-| ~SPC y n~   | howdoyou-next-link             |
-| ~SPC y r~   | howdoyou-reload-link           |
-| ~SPC y 1~   | howdoyou-go-back-to-first-link |
-| ~SPC y p~   | howdoyou-previous-link         |
-| ~SPC y h n~ | hnreader-news                  |
-| ~SPC y h p~ | hnreader-past                  |
-| ~SPC y h m~ | hnreader-more                  |
-| ~SPC y h s~ | hnreader-show                  |
-| ~SPC y h b~ | hnreader-back                  |
-| ~SPC y h a~ | hnreader-ask                   |
+| ~SPC y y~     | howdoyou-query                 |
+| ~SPC y n~     | howdoyou-next-link             |
+| ~SPC y r~     | howdoyou-reload-link           |
+| ~SPC y 1~     | howdoyou-go-back-to-first-link |
+| ~SPC y p~     | howdoyou-previous-link         |
+| ~SPC y h n~   | hnreader-news                  |
+| ~SPC y h p~   | hnreader-past                  |
+| ~SPC y h m~   | hnreader-more                  |
+| ~SPC y h s~   | hnreader-show                  |
+| ~SPC y h b~   | hnreader-back                  |
+| ~SPC y h a~   | hnreader-ask                   |
+| ~SPC y h c~   | hnreader-comment               |

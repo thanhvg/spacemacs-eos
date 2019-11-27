@@ -16,12 +16,14 @@
 - [[#key-bindings][Key bindings]]
 
 * Description
-  This layer =eos= implements the idea of Emacs Operating System which we try to do
-  anything possible inside emacs.
-  
+This layer =eos= implements the idea of Emacs Operating System which we try to
+do anything possible inside emacs.
+
+Actually it's just my grab bag of extra packages for =Spacemacs=
 ** Features:
-  - Hackernews reader with hnreader https://github.com/thanhvg/emacs-hnreader
-  - Search and read stack exchange with emacs-howdoyou https://github.com/thanhvg/emacs-howdoyou
+- Hackernews reader with [[https://github.com/thanhvg/emacs-hnreader][hnreader]] 
+- Search and read stack exchange with [[https://github.com/thanhvg/emacs-howdoyou][emacs-howdoyou]] 
+- Persistent anotations with [[https://github.com/thanhvg/ipa.el][In-place Annotations]] 
 
 * Install
 Clone this repo to you spacemacs private layer location:
@@ -31,8 +33,7 @@ git clone https://github.com/thanhvg/spacemacs-eos ~/.emacs.d/private/eos
 #+end_example
 
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
-add =eos= to the existing =dotspacemacs-configuration-layers= list in this
-file.
+add =eos= to the existing =dotspacemacs-configuration-layers= list in that file.
 
 * Key bindings
 
@@ -50,3 +51,11 @@ file.
 | ~SPC y h b~   | hnreader-back                  |
 | ~SPC y h a~   | hnreader-ask                   |
 | ~SPC y h c~   | hnreader-comment               |
+| ~SCP a n i~   | ipa-insert                     |
+| ~SCP a n e~   | ipa-edit                       |
+| ~SCP a n s~   | ipa-show                       |
+| ~SCP a n m~   | ipa-move                       |
+| ~SCP a n n~   | ipa-next                       |
+| ~SCP a n p~   | ipa-previous                   |
+| ~SCP a n t~   | ipa-toggle                     |
+| ~SCP a n j~   | ipa-jump                       |

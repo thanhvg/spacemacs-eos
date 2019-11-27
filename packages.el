@@ -31,9 +31,9 @@
 
 (defconst eos-packages
   '(
-    ;; (howdoyou :location (recipe
-    ;;                      :fetcher github
-    ;;                      :repo "thanhvg/emacs-howdoyou"))
+    (ipa :location (recipe
+                         :fetcher github
+                         :repo "thanhvg/ipa.el"))
     howdoyou
     hnreader)
   
@@ -90,4 +90,23 @@ Each entry is either:
         "yhc" #'hnreader-comment
         "yhb" #'hnreader-back
         "yha" #'hnreader-ask))))
+
+(defun eos/init-ipa ()
+  ;; (require 'ipa)
+  (use-package ipa
+    ;; with defer anotations won't show after restart
+    ;; :defer t 
+    :init
+    (progn
+      (setq ipa-overlay-position "above")
+      (spacemacs/declare-prefix "an" "annotate")
+      (spacemacs/set-leader-keys
+        "ani" #'ipa-insert
+        "ane" #'ipa-edit
+        "ans" #'ipa-show
+        "anm" #'ipa-move
+        "ann" #'ipa-next
+        "anp" #'ipa-previous
+        "ant" #'ipa-toggle
+        "anj" #'ipa-jump))))
 ;;; packages.el ends here

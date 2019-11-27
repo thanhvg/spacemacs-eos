@@ -18,7 +18,7 @@
 * Description
   This layer =eos= implements the idea of Emacs Operating System which we try to do
   anything possible inside emacs.
-
+  
 ** Features:
   - Hackernews reader with hnreader https://github.com/thanhvg/emacs-hnreader
   - Search and read stack exchange with emacs-howdoyou https://github.com/thanhvg/emacs-howdoyou

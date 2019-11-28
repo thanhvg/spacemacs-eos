@@ -100,12 +100,17 @@ Each entry is either:
     (progn
       (setq ipa-overlay-position "above")
       (spacemacs/declare-prefix "an" "annotate")
+      (spacemacs/declare-prefix "anE" "ipa-edit-above")
+      (spacemacs/declare-prefix "anM" "ipa-move-above-anotation")
       (spacemacs/set-leader-keys
         "ani" #'ipa-insert
         "ane" #'ipa-edit
+        "anE" (lambda () (interactive) (ipa-edit 4))
         "ans" #'ipa-show
         "anm" #'ipa-move
+        "anM" (lambda () (interactive) (ipa-move 4))
         "ann" #'ipa-next
+        "anN" #'ipa-previous
         "anp" #'ipa-previous
         "ant" #'ipa-toggle
         "anj" #'ipa-jump))))

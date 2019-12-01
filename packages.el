@@ -98,6 +98,7 @@ Each entry is either:
     ;; :defer t 
     :init
     (progn
+      (add-hook 'find-file-hook 'ipa-mode)
       (setq ipa-overlay-position "above")
       (spacemacs/declare-prefix "an" "annotate")
       (spacemacs/declare-prefix "anE" "ipa-edit-above")
@@ -112,6 +113,5 @@ Each entry is either:
         "ann" #'ipa-next
         "anN" #'ipa-previous
         "anp" #'ipa-previous
-        "ant" #'ipa-toggle
         "anj" #'ipa-jump))))
 ;;; packages.el ends here

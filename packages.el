@@ -113,5 +113,6 @@ Each entry is either:
         "ann" #'ipa-next
         "anN" #'ipa-previous
         "anp" #'ipa-previous
+        "anr" #'ipa-refresh
         "anj" #'ipa-jump))))
 ;;; packages.el ends here

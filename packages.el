@@ -102,11 +102,14 @@ Each entry is either:
       (setq ipa-overlay-position "above")
       (spacemacs/declare-prefix "an" "annotate")
       (spacemacs/declare-prefix "anE" "ipa-edit-above")
+      (spacemacs/declare-prefix "anD" "ipa-delete-above")
       (spacemacs/declare-prefix "anM" "ipa-move-above-anotation")
       (spacemacs/set-leader-keys
         "ani" #'ipa-insert
         "ane" #'ipa-edit
         "anE" (lambda () (interactive) (ipa-edit 4))
+        "and" #'ipa-delete
+        "anD" (lambda () (interactive) (ipa-delete 4))
         "ans" #'ipa-show
         "anm" #'ipa-move
         "anM" (lambda () (interactive) (ipa-move 4))

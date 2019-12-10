@@ -100,6 +100,7 @@ Each entry is either:
     (progn
       (add-hook 'find-file-hook 'ipa-mode)
       (setq ipa-overlay-position "above")
+      (setq ipa-file-function 'ipa-get-project-file)
       (spacemacs/declare-prefix "an" "annotate")
       (spacemacs/declare-prefix "anE" "ipa-edit-above")
       (spacemacs/declare-prefix "anD" "ipa-delete-above")

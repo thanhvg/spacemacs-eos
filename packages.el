@@ -128,6 +128,6 @@ Each entry is either:
     :init
     (spacemacs/set-leader-keys
       "zf" #'fold-this-with-indent
-      "zF" #'fold-this-with-header)))
+      "zh" #'fold-this-with-header)))
 
 ;;; packages.el ends here

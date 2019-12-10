@@ -32,11 +32,13 @@
 (defconst eos-packages
   '(
     (ipa :location (recipe
-                         :fetcher github
-                         :repo "thanhvg/ipa.el"))
+                    :fetcher github
+                    :repo "thanhvg/ipa.el"))
     howdoyou
-    hnreader)
-  
+    hnreader
+    fold-this
+    )
+
   "The list of Lisp packages required by the eos layer.
 
 Each entry is either:
@@ -92,10 +94,9 @@ Each entry is either:
         "yha" #'hnreader-ask))))
 
 (defun eos/init-ipa ()
-  ;; (require 'ipa)
   (use-package ipa
     ;; with defer anotations won't show after restart
-    ;; :defer t 
+    ;; :defer t
     :init
     (progn
       (add-hook 'find-file-hook 'ipa-mode)
@@ -119,4 +120,14 @@ Each entry is either:
         "anp" #'ipa-previous
         "anr" #'ipa-refresh
         "anj" #'ipa-jump))))
+
+
+(defun eos/init-fold-this ()
+  (use-package fold-this
+    :defer t
+    :init
+    (spacemacs/set-leader-keys
+      "zf" #'fold-this-with-indent
+      "zF" #'fold-this-with-header)))
+
 ;;; packages.el ends here

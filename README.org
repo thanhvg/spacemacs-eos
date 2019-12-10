@@ -23,7 +23,8 @@ Actually it's just my grab bag of extra packages for =Spacemacs=
 ** Features:
 - Hackernews reader with [[https://github.com/thanhvg/emacs-hnreader][hnreader]] 
 - Search and read stack exchange with [[https://github.com/thanhvg/emacs-howdoyou][emacs-howdoyou]] 
-- Persistent anotations with [[https://github.com/thanhvg/ipa.el][In-place Annotations]] 
+- Persistent anotations with [[https://github.com/thanhvg/ipa.el][In-place Annotations]]
+- Fold region with default or custom header with [[https://github.com/magnars/fold-this.el][fold-this]]
 
 * Install
 Clone this repo to you spacemacs private layer location:
@@ -62,3 +63,5 @@ add =eos= to the existing =dotspacemacs-configuration-layers= list in that file.
 | ~SCP a n p~   | ipa-previous                   |
 | ~SCP a n r~   | ipa-refresh                    |
 | ~SCP a n j~   | ipa-jump                       |
+| ~SCP z f~     | fold-this-with-indent          |
+| ~SCP z f~     | fold-this-with-header          |

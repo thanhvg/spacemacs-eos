@@ -127,7 +127,7 @@ Each entry is either:
     :defer t
     :init
     (spacemacs/set-leader-keys
-      "zf" #'fold-this-with-indent
+      "zz" #'fold-this-with-indent
       "zh" #'fold-this-with-header)))
 
 ;;; packages.el ends here

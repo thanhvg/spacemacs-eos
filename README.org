@@ -56,6 +56,7 @@ add =eos= to the existing =dotspacemacs-configuration-layers= list in that file.
 | ~SCP a n e~   | ipa-edit                       |
 | ~SCP a n E~   | ipa-edit annotation above      |
 | ~SCP a n s~   | ipa-show                       |
+| ~SCP a n S~   | ipa-show-all                   |
 | ~SCP a n m~   | ipa-move                       |
 | ~SCP a n M~   | ipa-move annotation above      |
 | ~SCP a n n~   | ipa-next                       |

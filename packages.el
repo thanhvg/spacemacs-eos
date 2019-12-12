@@ -113,7 +113,7 @@ Each entry is either:
         "and" #'ipa-delete
         "anD" (lambda () (interactive) (ipa-delete 4))
         "ans" #'ipa-show
-        "ans" #'ipa-show-all
+        "anS" #'ipa-show-all
         "anm" #'ipa-move
         "anM" (lambda () (interactive) (ipa-move 4))
         "ann" #'ipa-next

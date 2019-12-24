@@ -29,3 +29,24 @@ So the indent is respected."
   "Ask for header to put in the fold."
   (interactive "r")
   (fold-this-with-indent beg end (read-string "Header: ")))
+
+(defun howdoyou-with-google-suggest ()
+  "`howdoyou-query' with `google-suggest'."
+  (interactive)
+  (howdoyou-query (google-suggest)))
+
+(defun google-google ()
+  "Build query to search with google suggest."
+  (interactive)
+  (let* ((query (google-suggest))
+         (url (format eos-google-suggest-search-url
+                      (url-hexify-string query))))
+    (browse-url url)))
+
+(defun google-eww ()
+  "Build query to search with google suggest."
+  (interactive)
+  (let* ((query (google-suggest))
+         (url (format eos-google-suggest-search-url
+                      (url-hexify-string query))))
+    (eww url)))

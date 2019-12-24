@@ -34,6 +34,9 @@
     (ipa :location (recipe
                     :fetcher github
                     :repo "thanhvg/ipa.el"))
+    (google-suggest :location (recipe
+                               :fetcher github
+                               :repo "thanhvg/emacs-google-suggest"))
     howdoyou
     hnreader
     fold-this
@@ -66,13 +69,22 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun eos/init-google-suggest ()
+  (use-package google-suggest
+    :defer t
+    :init (progn
+            (spacemacs/set-leader-keys
+              "yG" #'google-eww
+              "yg" #'google-google))))
+
 (defun eos/init-howdoyou ()
   (use-package howdoyou
     :defer t
     :init
     (progn
       (spacemacs/set-leader-keys
-        "yy" #'howdoyou-query
+        "yY" #'howdoyou-query
+        "yy" #'howdoyou-with-google-suggest
         "yn" #'howdoyou-next-link
         "yr" #'howdoyou-reload-link
         "y1" #'howdoyou-go-back-to-first-link
@@ -121,7 +133,6 @@ Each entry is either:
         "anp" #'ipa-previous
         "anr" #'ipa-refresh
         "anj" #'ipa-jump))))
-
 
 (defun eos/init-fold-this ()
   (use-package fold-this

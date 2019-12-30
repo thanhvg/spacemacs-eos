@@ -40,6 +40,9 @@
     howdoyou
     hnreader
     fold-this
+    (helm-wikipedia :location (recipe
+                               :fetcher github
+                               :repo "emacs-helm/helm-wikipedia"))
     )
 
   "The list of Lisp packages required by the eos layer.
@@ -141,5 +144,12 @@ Each entry is either:
     (spacemacs/set-leader-keys
       "zz" #'fold-this-with-indent
       "zh" #'fold-this-with-header)))
+
+(defun eos/init-helm-wikipedia ()
+  (use-package helm-wikipedia
+    :defer t
+    :init
+    (spacemacs/set-leader-keys
+      "yw" #'helm-wikipedia-suggest)))
 
 ;;; packages.el ends here

@@ -66,3 +66,5 @@ add =eos= to the existing =dotspacemacs-configuration-layers= list in that file.
 | ~SCP a n j~   | ipa-jump                       |
 | ~SCP z z~     | fold-this-with-indent          |
 | ~SCP z h~     | fold-this-with-header          |
+
+TODO: add doc for google suggest and helm-wiki

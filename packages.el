@@ -34,6 +34,9 @@
     (ipa :location (recipe
                     :fetcher github
                     :repo "thanhvg/ipa.el"))
+    (git-complete :location (recipe
+                    :fetcher github
+                    :repo "zk-phi/git-complete"))
     (google-suggest :location (recipe
                                :fetcher github
                                :repo "thanhvg/emacs-google-suggest"))
@@ -138,6 +141,10 @@ Each entry is either:
         "anp" #'ipa-previous
         "anr" #'ipa-refresh
         "anj" #'ipa-jump))))
+
+(defun eos/init-git-complete ()
+  (use-package git-complete
+    :bind ("C-c C-SPC" . git-complete)))
 
 (defun eos/init-fold-this ()
   (use-package fold-this

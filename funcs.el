@@ -50,3 +50,10 @@ So the indent is respected."
          (url (format eos-google-suggest-search-url
                       (url-hexify-string query))))
     (eww url)))
+
+
+(defun thanh-company-dabbrev ()
+  "Use company-dabbrev."
+  (interactive)
+  (let ((company-backends '(company-dabbrev)))
+    (company-complete)))

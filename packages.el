@@ -46,6 +46,7 @@
     (helm-wikipedia :location (recipe
                                :fetcher github
                                :repo "emacs-helm/helm-wikipedia"))
+    company
     )
 
   "The list of Lisp packages required by the eos layer.
@@ -161,4 +162,6 @@ Each entry is either:
     (spacemacs/set-leader-keys
       "yw" #'helm-wikipedia-suggest)))
 
+(defun eos/post-init-company ()
+  (global-set-key (kbd "C-c SPC") 'thanh-company-dabbrev))
 ;;; packages.el ends here

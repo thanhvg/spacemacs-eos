@@ -30,13 +30,15 @@
 ;;; Code:
 
 (defconst eos-packages
-  '(
-    (ipa :location (recipe
+  '((ipa :location (recipe
                     :fetcher github
                     :repo "thanhvg/ipa.el"))
     (git-complete :location (recipe
                     :fetcher github
                     :repo "zk-phi/git-complete"))
+    (helm-wordnut :location (recipe
+                             :fetcher github
+                             :repo "manuel-uberti/helm-wordnut"))
     (google-suggest :location (recipe
                                :fetcher github
                                :repo "thanhvg/emacs-google-suggest"))
@@ -46,8 +48,7 @@
     (helm-wikipedia :location (recipe
                                :fetcher github
                                :repo "emacs-helm/helm-wikipedia"))
-    company
-    )
+    company)
 
   "The list of Lisp packages required by the eos layer.
 
@@ -142,6 +143,14 @@ Each entry is either:
         "anp" #'ipa-previous
         "anr" #'ipa-refresh
         "anj" #'ipa-jump))))
+
+(defun eos/init-helm-wordnut ()
+  (use-package helm-wordnut)
+  :defer t
+  :init
+  (progn
+    (spacemacs/set-leader-keys
+      "aw" #'helm-wordnut)))
 
 (defun eos/init-git-complete ()
   (use-package git-complete

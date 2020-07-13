@@ -34,8 +34,8 @@
                     :fetcher github
                     :repo "thanhvg/ipa.el"))
     (git-complete :location (recipe
-                    :fetcher github
-                    :repo "zk-phi/git-complete"))
+                             :fetcher github
+                             :repo "zk-phi/git-complete"))
     (helm-wordnut :location (recipe
                              :fetcher github
                              :repo "manuel-uberti/helm-wordnut"))
@@ -145,12 +145,12 @@ Each entry is either:
         "anj" #'ipa-jump))))
 
 (defun eos/init-helm-wordnut ()
-  (use-package helm-wordnut)
-  :defer t
-  :init
-  (progn
-    (spacemacs/set-leader-keys
-      "aw" #'helm-wordnut)))
+  (use-package helm-wordnut
+    :defer t
+    :init
+    (progn
+      (spacemacs/set-leader-keys
+        "aw" #'helm-wordnut))))
 
 (defun eos/init-git-complete ()
   (use-package git-complete

@@ -110,7 +110,6 @@ Each entry is either:
         "yhm" #'hnreader-more
         "yhs" #'hnreader-show
         "yhc" #'hnreader-comment
-        "yhr" #'hnreader-read-item
         "yhi" #'hnreader-org-insert-hn-link
         "yhb" #'hnreader-back
         "yha" #'hnreader-ask))))

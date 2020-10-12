@@ -30,26 +30,33 @@
 ;;; Code:
 
 (defconst eos-packages
-  '((ipa :location (recipe
-                    :fetcher github
-                    :repo "thanhvg/ipa.el"))
+  '((counsel-wordnut
+     :requires ivy
+     :location (recipe
+                :fetcher github
+                :repo "thanhvg/counsel-wordnut"))
+    company
+    fold-this
     (git-complete :location (recipe
                              :fetcher github
                              :repo "zk-phi/git-complete"))
-    (helm-wordnut :location (recipe
-                             :fetcher github
-                             :repo "manuel-uberti/helm-wordnut"))
     (google-suggest :location (recipe
                                :fetcher github
                                :repo "thanhvg/emacs-google-suggest"))
+    (helm-wordnut
+     :requires helm
+     :location (recipe
+                :fetcher github
+                :repo "manuel-uberti/helm-wordnut"))
     howdoyou
     hnreader
-    fold-this
-    (helm-wikipedia :location (recipe
-                               :fetcher github
-                               :repo "emacs-helm/helm-wikipedia"))
-    company)
+    ;; (helm-wikipedia :location (recipe
+    ;;                            :fetcher github
+    ;;                            :repo "emacs-helm/helm-wikipedia"))
 
+    (ipa :location (recipe
+                    :fetcher github
+                    :repo "thanhvg/ipa.el")))
   "The list of Lisp packages required by the eos layer.
 
 Each entry is either:
@@ -76,6 +83,13 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+
+(defun eos/init-counsel-wordnut ()
+  (use-package counsel-wordnut
+    :defer t
+    :init
+    (spacemacs/set-leader-keys "aw" #'counsel-wordnut)))
 
 (defun eos/init-google-suggest ()
   (use-package google-suggest
@@ -147,9 +161,7 @@ Each entry is either:
   (use-package helm-wordnut
     :defer t
     :init
-    (progn
-      (spacemacs/set-leader-keys
-        "aw" #'helm-wordnut))))
+    (spacemacs/set-leader-keys "aw" #'helm-wordnut)))
 
 (defun eos/init-git-complete ()
   (use-package git-complete
@@ -163,12 +175,12 @@ Each entry is either:
       "zz" #'fold-this-with-indent
       "zh" #'fold-this-with-header)))
 
-(defun eos/init-helm-wikipedia ()
-  (use-package helm-wikipedia
-    :defer t
-    :init
-    (spacemacs/set-leader-keys
-      "yw" #'helm-wikipedia-suggest)))
+;; (defun eos/init-helm-wikipedia ()
+;;   (use-package helm-wikipedia
+;;     :defer t
+;;     :init
+;;     (spacemacs/set-leader-keys
+;;       "yw" #'helm-wikipedia-suggest)))
 
 (defun eos/post-init-company ()
   (global-set-key (kbd "C-c SPC") 'thanh-company-dabbrev))

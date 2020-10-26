@@ -89,7 +89,7 @@ Each entry is either:
   (use-package counsel-wordnut
     :defer t
     :init
-    (spacemacs/set-leader-keys "aw" #'counsel-wordnut)))
+    (spacemacs/set-leader-keys "xww" #'counsel-wordnut)))
 
 (defun eos/init-google-suggest ()
   (use-package google-suggest
@@ -161,7 +161,7 @@ Each entry is either:
   (use-package helm-wordnut
     :defer t
     :init
-    (spacemacs/set-leader-keys "aw" #'helm-wordnut)))
+    (spacemacs/set-leader-keys "xww" #'helm-wordnut)))
 
 (defun eos/init-git-complete ()
   (use-package git-complete

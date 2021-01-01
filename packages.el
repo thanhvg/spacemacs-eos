@@ -54,9 +54,14 @@
     ;;                            :fetcher github
     ;;                            :repo "emacs-helm/helm-wikipedia"))
 
+    (virtual-comment :location (recipe
+                                :fetcher github
+                                :repo "thanhvg/emacs-virtual-comment"))
+
     (ipa :location (recipe
                     :fetcher github
                     :repo "thanhvg/ipa.el")))
+
   "The list of Lisp packages required by the eos layer.
 
 Each entry is either:
@@ -128,13 +133,34 @@ Each entry is either:
         "yhb" #'hnreader-back
         "yha" #'hnreader-ask))))
 
+(defun eos/init-virtual-comment ()
+  (use-package virtual-comment
+    :init
+    (progn
+      (add-hook 'find-file-hook 'virtual-comment-mode)
+      (add-hook 'virtual-comment-show-mode 'outline-minor-mode)
+      (spacemacs/declare-prefix "cv" "virtual-comments")
+      (spacemacs/set-leader-keys
+        "cvv" #'virtual-comment-make
+        "cvd" #'virtual-comment-delete
+        "cvs" #'virtual-comment-show
+        "cvj" #'virtual-comment-next
+        "cvn" #'virtual-comment-next
+        "cvN" #'virtual-comment-previous
+        "cvk" #'virtual-comment-previous
+        "cvp" #'virtual-comment-paste
+        "cvr" #'virtual-comment-realign))
+    :config
+    (evilified-state-evilify virtual-comment-show-mode virtual-comment-show-mode-map
+      "q" quit-window)))
+
 (defun eos/init-ipa ()
   (use-package ipa
     ;; with defer anotations won't show after restart
     ;; :defer t
     :init
     (progn
-      (add-hook 'find-file-hook 'ipa-mode)
+      ;; (add-hook 'find-file-hook 'ipa-mode)
       (setq ipa-overlay-position "above")
       (setq ipa-file-function 'ipa-get-project-file)
       (spacemacs/declare-prefix "an" "annotate")

@@ -151,8 +151,11 @@ Each entry is either:
         "cvp" #'virtual-comment-paste
         "cvr" #'virtual-comment-realign))
     :config
-    (evilified-state-evilify virtual-comment-show-mode virtual-comment-show-mode-map
-      "q" quit-window)))
+    (evilified-state-evilify
+      virtual-comment-show-mode virtual-comment-show-mode-map
+      "q" quit-window)
+    (advice-add 'virtual-comment-make
+                :around #'spacemacs--advice-virtual-comment)))
 
 (defun eos/init-ipa ()
   (use-package ipa

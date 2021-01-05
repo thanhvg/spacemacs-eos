@@ -51,6 +51,10 @@ So the indent is respected."
                       (url-hexify-string query))))
     (eww url)))
 
+(defun spacemacs--advice-virtual-comment (origfunc &rest args)
+  "Enable evil for ORIGFUNC."
+  (let ((evil-want-minibuffer t))
+    (apply origfunc args)))
 
 (defun thanh-company-dabbrev ()
   "Use company-dabbrev."

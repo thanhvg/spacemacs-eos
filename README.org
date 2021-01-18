@@ -40,31 +40,40 @@ add =eos= to the existing =dotspacemacs-configuration-layers= list in that file.
 
 | Key Binding | Description                    |
 |-------------+--------------------------------|
-| ~SPC y y~     | howdoyou-query                 |
-| ~SPC y n~     | howdoyou-next-link             |
-| ~SPC y r~     | howdoyou-reload-link           |
-| ~SPC y 1~     | howdoyou-go-back-to-first-link |
-| ~SPC y p~     | howdoyou-previous-link         |
-| ~SPC y h n~   | hnreader-news                  |
-| ~SPC y h p~   | hnreader-past                  |
-| ~SPC y h m~   | hnreader-more                  |
-| ~SPC y h s~   | hnreader-show                  |
-| ~SPC y h b~   | hnreader-back                  |
-| ~SPC y h a~   | hnreader-ask                   |
-| ~SPC y h c~   | hnreader-comment               |
-| ~SCP a n i~   | ipa-insert                     |
-| ~SCP a n e~   | ipa-edit                       |
-| ~SCP a n E~   | ipa-edit annotation above      |
-| ~SCP a n s~   | ipa-show                       |
-| ~SCP a n S~   | ipa-show-all                   |
-| ~SCP a n m~   | ipa-move                       |
-| ~SCP a n M~   | ipa-move annotation above      |
-| ~SCP a n n~   | ipa-next                       |
-| ~SCP a n N~   | ipa-previous                   |
-| ~SCP a n p~   | ipa-previous                   |
-| ~SCP a n r~   | ipa-refresh                    |
-| ~SCP a n j~   | ipa-jump                       |
-| ~SCP z z~     | fold-this-with-indent          |
-| ~SCP z h~     | fold-this-with-header          |
+| ~SPC y y~   | howdoyou-query                 |
+| ~SPC y n~   | howdoyou-next-link             |
+| ~SPC y r~   | howdoyou-reload-link           |
+| ~SPC y 1~   | howdoyou-go-back-to-first-link |
+| ~SPC y p~   | howdoyou-previous-link         |
+| ~SPC y h n~ | hnreader-news                  |
+| ~SPC y h p~ | hnreader-past                  |
+| ~SPC y h m~ | hnreader-more                  |
+| ~SPC y h s~ | hnreader-show                  |
+| ~SPC y h b~ | hnreader-back                  |
+| ~SPC y h a~ | hnreader-ask                   |
+| ~SPC y h c~ | hnreader-comment               |
+| ~SCP a n i~ | ipa-insert                     |
+| ~SCP a n e~ | ipa-edit                       |
+| ~SCP a n E~ | ipa-edit annotation above      |
+| ~SCP a n s~ | ipa-show                       |
+| ~SCP a n S~ | ipa-show-all                   |
+| ~SCP a n m~ | ipa-move                       |
+| ~SCP a n M~ | ipa-move annotation above      |
+| ~SCP a n n~ | ipa-next                       |
+| ~SCP a n N~ | ipa-previous                   |
+| ~SCP a n p~ | ipa-previous                   |
+| ~SCP a n r~ | ipa-refresh                    |
+| ~SCP a n j~ | ipa-jump                       |
+| ~SPC c v v~ | virtual-comment-make           |
+| ~SPC c v d~ | virtual-comment-delete         |
+| ~SPC c v s~ | virtual-comment-show           |
+| ~SPC c v j~ | virtual-comment-next           |
+| ~SPC c v n~ | virtual-comment-next           |
+| ~SPC c v N~ | virtual-comment-previous       |
+| ~SPC c v k~ | virtual-comment-previous       |
+| ~SPC c v p~ | virtual-comment-paste          |
+| ~SPC c v r~ | virtual-comment-realign        |
+| ~SCP z z~   | fold-this-with-indent          |
+| ~SCP z h~   | fold-this-with-header          |
 
 TODO: add doc for google suggest and helm-wiki

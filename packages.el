@@ -54,9 +54,10 @@
     ;;                            :fetcher github
     ;;                            :repo "emacs-helm/helm-wikipedia"))
 
-    (virtual-comment :location (recipe
-                                :fetcher github
-                                :repo "thanhvg/emacs-virtual-comment"))
+    virtual-comment
+    ;; (virtual-comment :location (recipe
+    ;;                             :fetcher github
+    ;;                             :repo "thanhvg/emacs-virtual-comment"))
 
     (ipa :location (recipe
                     :fetcher github

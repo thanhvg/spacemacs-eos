@@ -72,6 +72,7 @@ add =eos= to the existing =dotspacemacs-configuration-layers= list in that file.
 | ~SPC c v N~ | virtual-comment-previous       |
 | ~SPC c v k~ | virtual-comment-previous       |
 | ~SPC c v p~ | virtual-comment-paste          |
+| ~SPC c v e~ | virtual-comment-persist        |
 | ~SPC c v r~ | virtual-comment-realign        |
 | ~SCP z z~   | fold-this-with-indent          |
 | ~SCP z h~   | fold-this-with-header          |

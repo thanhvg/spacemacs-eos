@@ -150,6 +150,7 @@ Each entry is either:
         "cvN" #'virtual-comment-previous
         "cvk" #'virtual-comment-previous
         "cvp" #'virtual-comment-paste
+        "cve" #'virtual-comment-persist
         "cvr" #'virtual-comment-realign))
     :config
     (evilified-state-evilify

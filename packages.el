@@ -59,6 +59,10 @@
     ;;                             :fetcher github
     ;;                             :repo "thanhvg/emacs-virtual-comment"))
 
+    (reddigg :location (recipe
+                                :fetcher github
+                                :repo "thanhvg/emacs-reddigg"))
+
     (ipa :location (recipe
                     :fetcher github
                     :repo "thanhvg/ipa.el")))
@@ -133,6 +137,17 @@ Each entry is either:
         "yhi" #'hnreader-org-insert-hn-link
         "yhb" #'hnreader-back
         "yha" #'hnreader-ask))))
+
+(defun eos/init-reddigg ()
+  (use-package reddigg
+    :defer t
+    :init
+    (progn
+      (spacemacs/declare-prefix "ya" "reddigg")
+      (spacemacs/set-leader-keys
+        "yaa" #'reddigg-view-main
+        "yas" #'reddigg-view-sub
+        "yac" #'reddigg-view-comments))))
 
 (defun eos/init-virtual-comment ()
   (use-package virtual-comment

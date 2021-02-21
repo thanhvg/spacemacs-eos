@@ -59,9 +59,10 @@
     ;;                             :fetcher github
     ;;                             :repo "thanhvg/emacs-virtual-comment"))
 
-    (reddigg :location (recipe
-                                :fetcher github
-                                :repo "thanhvg/emacs-reddigg"))
+    ;; (reddigg :location (recipe
+    ;;                             :fetcher github
+    ;;                             :repo "thanhvg/emacs-reddigg"))
+    reddigg
 
     (ipa :location (recipe
                     :fetcher github

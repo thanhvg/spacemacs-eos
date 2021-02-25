@@ -171,7 +171,7 @@ Each entry is either:
     :config
     (evilified-state-evilify
       virtual-comment-show-mode virtual-comment-show-mode-map
-      "q" quit-window)
+      "q" 'quit-window)
     (advice-add 'virtual-comment-make
                 :around #'spacemacs--advice-virtual-comment)))
 

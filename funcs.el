@@ -56,8 +56,19 @@ So the indent is respected."
   (let ((evil-want-minibuffer t))
     (apply origfunc args)))
 
-(defun thanh-company-dabbrev ()
+(defun eos-company-dabbrev ()
   "Use company-dabbrev."
   (interactive)
   (let ((company-backends '(company-dabbrev)))
     (company-complete)))
+
+(defun eos-toggle-company-default ()
+  (interactive)
+  (unless company-mode
+    (company-mode))
+  (if eos-original-company-backends
+      (progn
+        (setq-local company-backends eos-original-company-backends)
+        (setq eos-original-company-backends nil))
+    (setq eos-original-company-backends company-backends)
+    (setq-local company-backends spacemacs-default-company-backends)))

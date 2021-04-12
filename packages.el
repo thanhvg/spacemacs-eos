@@ -230,5 +230,6 @@ Each entry is either:
 ;;       "yw" #'helm-wikipedia-suggest)))
 
 (defun eos/post-init-company ()
-  (global-set-key (kbd "C-c SPC") 'thanh-company-dabbrev))
+  (spacemacs/set-leader-keys "t SPC" 'eos-toggle-company-default)
+  (global-set-key (kbd "C-c SPC") 'eos-company-dabbrev))
 ;;; packages.el ends here

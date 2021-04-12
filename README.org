@@ -3,7 +3,7 @@
 # The example below contains 2 tags: "layer" and "web service"
 # Avaliable tags are listed in <spacemacs_root>/.ci/spacedoc-cfg.edn
 # under ":spacetools.spacedoc.config/valid-tags" section.
-#+TAGS: layer|web service
+#+TAGS: layer|misc
 
 # The maximum height of the logo should be 200 pixels.
 # [[img/eos.png]]
@@ -25,6 +25,7 @@ Actually it's just my grab bag of extra packages for =Spacemacs=
 - Search and read stack exchange with [[https://github.com/thanhvg/emacs-howdoyou][emacs-howdoyou]] 
 - Persistent anotations with [[https://github.com/thanhvg/ipa.el][In-place Annotations]]
 - Fold region with default or custom header with [[https://github.com/magnars/fold-this.el][fold-this]]
+- Company extras
 
 * Install
 Clone this repo to you spacemacs private layer location:
@@ -76,5 +77,8 @@ add =eos= to the existing =dotspacemacs-configuration-layers= list in that file.
 | ~SPC c v r~ | virtual-comment-realign        |
 | ~SCP z z~   | fold-this-with-indent          |
 | ~SCP z h~   | fold-this-with-header          |
+| ~SCP t SPC~ | eos-toggle-company-default     |
+| ~C-c SPC~   | eos-company-dabbrev            |
+| ~C-c C-SPC~ | git-complete                   |
 
 TODO: add doc for google suggest and helm-wiki

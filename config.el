@@ -14,3 +14,7 @@
   "https://encrypted.google.com/search?ie=utf-8&oe=utf-8&q=%s"
   "URL used for Google searching.
 This is a format string, don't forget the `%s'.")
+
+
+(defvar-local eos-original-company-backends nil
+  "Buffer local original `company-backends'")

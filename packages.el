@@ -62,11 +62,7 @@
     ;; (reddigg :location (recipe
     ;;                             :fetcher github
     ;;                             :repo "thanhvg/emacs-reddigg"))
-    reddigg
-
-    (ipa :location (recipe
-                    :fetcher github
-                    :repo "thanhvg/ipa.el")))
+    reddigg)
 
   "The list of Lisp packages required by the eos layer.
 
@@ -174,35 +170,6 @@ Each entry is either:
       "q" 'quit-window)
     (advice-add 'virtual-comment-make
                 :around #'spacemacs--advice-virtual-comment)))
-
-(defun eos/init-ipa ()
-  (use-package ipa
-    ;; with defer anotations won't show after restart
-    ;; :defer t
-    :init
-    (progn
-      ;; (add-hook 'find-file-hook 'ipa-mode)
-      (setq ipa-overlay-position "above")
-      (setq ipa-file-function 'ipa-get-project-file)
-      (spacemacs/declare-prefix "an" "annotate")
-      (spacemacs/declare-prefix "anE" "ipa-edit-above")
-      (spacemacs/declare-prefix "anD" "ipa-delete-above")
-      (spacemacs/declare-prefix "anM" "ipa-move-above-anotation")
-      (spacemacs/set-leader-keys
-        "ani" #'ipa-insert
-        "ane" #'ipa-edit
-        "anE" (lambda () (interactive) (ipa-edit 4))
-        "and" #'ipa-delete
-        "anD" (lambda () (interactive) (ipa-delete 4))
-        "ans" #'ipa-show
-        "anS" #'ipa-show-all
-        "anm" #'ipa-move
-        "anM" (lambda () (interactive) (ipa-move 4))
-        "ann" #'ipa-next
-        "anN" #'ipa-previous
-        "anp" #'ipa-previous
-        "anr" #'ipa-refresh
-        "anj" #'ipa-jump))))
 
 (defun eos/init-helm-wordnut ()
   (use-package helm-wordnut

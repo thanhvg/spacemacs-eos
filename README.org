@@ -23,7 +23,7 @@ Actually it's just my grab bag of extra packages for =Spacemacs=
 ** Features:
 - Hackernews reader with [[https://github.com/thanhvg/emacs-hnreader][hnreader]] 
 - Search and read stack exchange with [[https://github.com/thanhvg/emacs-howdoyou][emacs-howdoyou]] 
-- Persistent anotations with [[https://github.com/thanhvg/ipa.el][In-place Annotations]]
+- Persistent anotations with [[https://github.com/thanhvg/emacs-virtual-comment][emacs-virtual-comment]]
 - Fold region with default or custom header with [[https://github.com/magnars/fold-this.el][fold-this]]
 - Company extras
 
@@ -53,18 +53,6 @@ add =eos= to the existing =dotspacemacs-configuration-layers= list in that file.
 | ~SPC y h b~ | hnreader-back                  |
 | ~SPC y h a~ | hnreader-ask                   |
 | ~SPC y h c~ | hnreader-comment               |
-| ~SCP a n i~ | ipa-insert                     |
-| ~SCP a n e~ | ipa-edit                       |
-| ~SCP a n E~ | ipa-edit annotation above      |
-| ~SCP a n s~ | ipa-show                       |
-| ~SCP a n S~ | ipa-show-all                   |
-| ~SCP a n m~ | ipa-move                       |
-| ~SCP a n M~ | ipa-move annotation above      |
-| ~SCP a n n~ | ipa-next                       |
-| ~SCP a n N~ | ipa-previous                   |
-| ~SCP a n p~ | ipa-previous                   |
-| ~SCP a n r~ | ipa-refresh                    |
-| ~SCP a n j~ | ipa-jump                       |
 | ~SPC c v v~ | virtual-comment-make           |
 | ~SPC c v d~ | virtual-comment-delete         |
 | ~SPC c v s~ | virtual-comment-show           |

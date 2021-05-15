@@ -165,9 +165,27 @@ Each entry is either:
         "cve" #'virtual-comment-persist
         "cvr" #'virtual-comment-realign))
     :config
-    (evilified-state-evilify
-      virtual-comment-show-mode virtual-comment-show-mode-map
+    ;; (evilified-state-evilify
+    ;;   virtual-comment-show-mode virtual-comment-show-mode-map
+    ;;   "q" 'quit-window)
+
+    ;; (evilified-state-evilify-map virtual-comment-show-mode-map
+    ;;   :mode virtual-comment-show-mode
+    ;;   :bindings
+    ;;   "q" 'quit-window)
+
+    (evil-set-initial-state 'virtual-comment-show-mode-map 'normal)
+    (evil-collection-define-key 'normal 'virtual-comment-show-mode-map
+      (kbd "<backtab>") 'outline-show-all 
+      (kbd "<tab>") 'outline-toggle-children
+      "[[" 'outline-previous-visible-heading
+      "]]" 'outline-next-visible-heading
+      (kbd "C-k") 'outline-backward-same-level
+      (kbd "C-j") 'outline-forward-same-level
+      "gk" 'outline-backward-same-level
+      "gj" 'outline-forward-same-level
       "q" 'quit-window)
+
     (advice-add 'virtual-comment-make
                 :around #'spacemacs--advice-virtual-comment)))
 

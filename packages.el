@@ -163,6 +163,9 @@ Each entry is either:
         "cvk" #'virtual-comment-previous
         "cvp" #'virtual-comment-paste
         "cve" #'virtual-comment-persist
+        "cva" #'virtual-comment-add-location
+        "cvo" #'virtual-comment-goto-location
+        "cvy" #'virtual-comment-remember-current-location
         "cvr" #'virtual-comment-realign))
     :config
     ;; (evilified-state-evilify

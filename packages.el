@@ -189,8 +189,9 @@ Each entry is either:
       "gj" 'outline-forward-same-level
       "q" 'quit-window)
 
-    (advice-add 'virtual-comment-make
-                :around #'spacemacs--advice-virtual-comment)))
+    ;; (advice-add 'virtual-comment-make
+    ;;             :around #'spacemacs--advice-virtual-comment)
+    ))
 
 (defun eos/init-helm-wordnut ()
   (use-package helm-wordnut

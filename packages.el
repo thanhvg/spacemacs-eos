@@ -35,11 +35,7 @@
      :location (recipe
                 :fetcher github
                 :repo "thanhvg/counsel-wordnut"))
-    company
     fold-this
-    (git-complete :location (recipe
-                             :fetcher github
-                             :repo "zk-phi/git-complete"))
     (google-suggest :location (recipe
                                :fetcher github
                                :repo "thanhvg/emacs-google-suggest"))
@@ -199,10 +195,6 @@ Each entry is either:
     :init
     (spacemacs/set-leader-keys "xww" #'helm-wordnut)))
 
-(defun eos/init-git-complete ()
-  (use-package git-complete
-    :bind ("C-c C-SPC" . git-complete)))
-
 (defun eos/init-fold-this ()
   (use-package fold-this
     :defer t
@@ -211,14 +203,4 @@ Each entry is either:
       "zz" #'fold-this-with-indent
       "zh" #'fold-this-with-header)))
 
-;; (defun eos/init-helm-wikipedia ()
-;;   (use-package helm-wikipedia
-;;     :defer t
-;;     :init
-;;     (spacemacs/set-leader-keys
-;;       "yw" #'helm-wikipedia-suggest)))
-
-(defun eos/post-init-company ()
-  (spacemacs/set-leader-keys "t SPC" 'eos-toggle-company-default)
-  (global-set-key (kbd "C-c SPC") 'eos-company-dabbrev))
 ;;; packages.el ends here

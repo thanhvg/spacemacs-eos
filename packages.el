@@ -139,6 +139,7 @@ Each entry is either:
       (spacemacs/declare-prefix "ya" "reddigg")
       (spacemacs/set-leader-keys
         "yaa" #'reddigg-view-main
+        "yaf" #'reddigg-view-frontpage
         "yas" #'reddigg-view-sub
         "yac" #'reddigg-view-comments))))
 

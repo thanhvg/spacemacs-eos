@@ -72,3 +72,20 @@ So the indent is respected."
         (setq eos-original-company-backends nil))
     (setq eos-original-company-backends company-backends)
     (setq-local company-backends spacemacs-default-company-backends)))
+
+(defun spacemacs/elfeed-view-with-declutter ()
+  "Open current feed with `declutter'."
+  (interactive)
+  (let ((link (elfeed-entry-link elfeed-show-entry)))
+    (when link
+      (message "Sent to declutter: %s" link)
+        (declutter link))))
+
+(defun spacemacs/pocket-view-with-declutter ()
+  "Open current entry with `declutter'."
+  (interactive)
+  (when-let ((id (tabulated-list-get-id))
+             (item (ht-get pocket-reader-items id))
+             (url (pocket-reader--get-url item)))
+    (declutter url)
+    (message url)))

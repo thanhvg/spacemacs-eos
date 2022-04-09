@@ -1,4 +1,4 @@
-;;; packages.el --- eos layer packages file for Spacemacs.
+;;; packages.el --- eos layer packages file for Spacemacs. -*- lexical-binding: t -*-
 ;;
 ;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
 ;;
@@ -55,6 +55,9 @@
     ;;                             :fetcher github
     ;;                             :repo "thanhvg/emacs-virtual-comment"))
 
+    declutter
+    elfeed
+    pocket-reader
     ;; (reddigg :location (recipe
     ;;                             :fetcher github
     ;;                             :repo "thanhvg/emacs-reddigg"))
@@ -145,6 +148,7 @@ Each entry is either:
 
 (defun eos/init-virtual-comment ()
   (use-package virtual-comment
+    :defer t
     :init
     (progn
       (add-hook 'find-file-hook 'virtual-comment-mode)
@@ -204,4 +208,26 @@ Each entry is either:
       "zz" #'fold-this-with-indent
       "zh" #'fold-this-with-header)))
 
+(defun eos/init-declutter ()
+  (use-package declutter
+    ;; :commands (declutter-under-point)
+    :defer t
+    :init 
+    (spacemacs/set-leader-keys
+      "aww" 'declutter)
+    (setq declutter-engine 'rdrview)))
+
+(defun eos/pre-init-elfeed ()
+  (spacemacs|use-package-add-hook elfeed
+    :post-config 
+    (define-key elfeed-show-mode-map
+                (kbd "O")
+                #'spacemacs/elfeed-view-with-declutter)))
+
+(defun eos/pre-init-pocket-reader ()
+  (spacemacs|use-package-add-hook pocket-reader
+    :post-config 
+    (define-key pocket-reader-mode-map
+                (kbd "O")
+                #'spacemacs/pocket-view-with-declutter)))
 ;;; packages.el ends here

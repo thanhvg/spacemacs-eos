@@ -1,4 +1,4 @@
-;;; config.el --- erc Layer configuration File for Spacemacs
+;;; config.el --- erc Layer configuration File for Spacemacs. -*- lexical-binding: t -*-
 ;;
 ;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
 ;;

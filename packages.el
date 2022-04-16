@@ -180,7 +180,7 @@ Each entry is either:
 
     (evil-set-initial-state 'virtual-comment-show-mode-map 'normal)
     (evil-collection-define-key 'normal 'virtual-comment-show-mode-map
-      (kbd "<backtab>") 'outline-show-all 
+      (kbd "<backtab>") 'outline-show-all
       (kbd "<tab>") 'outline-toggle-children
       "[[" 'outline-previous-visible-heading
       "]]" 'outline-next-visible-heading
@@ -212,21 +212,22 @@ Each entry is either:
   (use-package declutter
     ;; :commands (declutter-under-point)
     :defer t
-    :init 
+    :init
     (spacemacs/set-leader-keys
-      "aww" 'declutter)
+      "aww" 'spacemacs/view-url-at-point
+      "awW" 'declutter)
     (setq declutter-engine 'rdrview)))
 
 (defun eos/pre-init-elfeed ()
   (spacemacs|use-package-add-hook elfeed
-    :post-config 
+    :post-config
     (define-key elfeed-show-mode-map
                 (kbd "O")
                 #'spacemacs/elfeed-view-with-declutter)))
 
 (defun eos/pre-init-pocket-reader ()
   (spacemacs|use-package-add-hook pocket-reader
-    :post-config 
+    :post-config
     (define-key pocket-reader-mode-map
                 (kbd "O")
                 #'spacemacs/pocket-view-with-declutter)))

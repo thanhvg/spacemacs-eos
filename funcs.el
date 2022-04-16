@@ -79,7 +79,7 @@ So the indent is respected."
   (let ((link (elfeed-entry-link elfeed-show-entry)))
     (when link
       (message "Sent to declutter: %s" link)
-        (declutter link))))
+      (declutter link))))
 
 (defun spacemacs/pocket-view-with-declutter ()
   "Open current entry with `declutter'."
@@ -89,3 +89,34 @@ So the indent is respected."
              (url (pocket-reader--get-url item)))
     (declutter url)
     (message url)))
+
+(defun spacemacs//get-url-under-point ()
+  "Try to figure out is there any URL under point.
+Returns nil if none. Code from `decluter'"
+  (let ((url (get-text-property (point) 'shr-url)))
+    (if url
+        url
+      (thing-at-point 'url))))
+
+(defun spacemacs/view-url-at-point (&optional arg)
+  "dispatch current url at point to appropriate handlers.
+When ARG then use `eww'."
+  (interactive "p")
+  (when-let* ((url (spacemacs//get-url-under-point))
+              (host (url-host (url-generic-parse-url url))))
+    (message url)
+    (cond
+     ((string-match-p "news.ycombinator.com" host)
+      (require 'hnreader)
+      (hnreader-promise-comment url))
+     ((string-match-p ".*stackoverflow.com" host)
+      (require 'howdoyou)
+      (howdoyou-read-so-link url)
+      (pop-to-buffer (howdoyou--get-buffer)))
+     ((string-match-p ".reddit.com" host)
+      (require 'reddigg)
+      (reddigg-view-comments url))
+     ((eql arg 4) (eww url))
+     (t
+      (require 'declutter)
+      (declutter-url url)))))

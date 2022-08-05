@@ -57,6 +57,7 @@
 
     declutter
     elfeed
+    eww
     pocket-reader
     ;; (reddigg :location (recipe
     ;;                             :fetcher github
@@ -222,8 +223,14 @@ Each entry is either:
   (spacemacs|use-package-add-hook elfeed
     :post-config
     (define-key elfeed-show-mode-map
-                (kbd "O")
+                (kbd "o")
                 #'spacemacs/elfeed-view-with-declutter)))
+
+(defun eos/pre-init-eww ()
+  (spacemacs|use-package-add-hook eww
+    :post-config
+    (spacemacs/set-leader-keys-for-major-mode 'eww-mode
+      "vd" 'spacemacs/declutter-current-eww)))
 
 (defun eos/pre-init-pocket-reader ()
   (spacemacs|use-package-add-hook pocket-reader

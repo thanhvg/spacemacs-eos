@@ -120,3 +120,7 @@ When ARG then use `eww'."
      (t
       (require 'declutter)
       (declutter-url url)))))
+
+(defun spacemacs/declutter-current-eww ()
+  (interactive)
+  (declutter-url (plist-get eww-data :url)))

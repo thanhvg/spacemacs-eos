@@ -152,7 +152,10 @@ Each entry is either:
     :defer t
     :init
     (progn
-      (add-hook 'find-file-hook 'virtual-comment-mode)
+      (run-with-idle-timer 0
+                           nil
+                           (lambda ()
+                             (add-hook 'find-file-hook 'virtual-comment-mode)))
       (add-hook 'virtual-comment-show-mode 'outline-minor-mode)
       (spacemacs/declare-prefix "cv" "virtual-comments")
       (spacemacs/set-leader-keys
@@ -193,7 +196,7 @@ Each entry is either:
 
     ;; (advice-add 'virtual-comment-make
     ;;             :around #'spacemacs--advice-virtual-comment)
-    ))
+    :diminish virtual-comment-mode))
 
 (defun eos/init-helm-wordnut ()
   (use-package helm-wordnut

@@ -103,8 +103,7 @@ Each entry is either:
     :defer t
     :init (progn
             (spacemacs/set-leader-keys
-              "yG" #'google-eww
-              "yg" #'google-google))))
+              "ysg" #'google-google))))
 
 (defun eos/init-howdoyou ()
   (use-package howdoyou

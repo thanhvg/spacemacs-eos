@@ -115,8 +115,8 @@ Each entry is either:
         "yqy" #'howdoyou-with-google-suggest
         "yqn" #'howdoyou-next-link
         "yqr" #'howdoyou-reload-link
-        "y1" #'howdoyou-go-back-to-first-link
-        "yp" #'howdoyou-previous-link))))
+        "yq1" #'howdoyou-go-back-to-first-link
+        "yqp" #'howdoyou-previous-link))))
 
 (defun eos/init-hnreader ()
   (use-package hnreader

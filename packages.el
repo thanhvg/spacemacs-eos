@@ -111,10 +111,10 @@ Each entry is either:
     :init
     (progn
       (spacemacs/set-leader-keys
-        "yY" #'howdoyou-query
-        "yy" #'howdoyou-with-google-suggest
-        "yn" #'howdoyou-next-link
-        "yr" #'howdoyou-reload-link
+        "yqY" #'howdoyou-query
+        "yqy" #'howdoyou-with-google-suggest
+        "yqn" #'howdoyou-next-link
+        "yqr" #'howdoyou-reload-link
         "y1" #'howdoyou-go-back-to-first-link
         "yp" #'howdoyou-previous-link))))
 

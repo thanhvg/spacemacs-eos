@@ -110,6 +110,7 @@ Each entry is either:
     :defer t
     :init
     (progn
+      (spacemacs/declare-prefix "yq" "howdoyou")
       (spacemacs/set-leader-keys
         "yqY" #'howdoyou-query
         "yqy" #'howdoyou-with-google-suggest

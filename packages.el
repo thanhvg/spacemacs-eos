@@ -233,6 +233,7 @@ Each entry is either:
   (spacemacs|use-package-add-hook eww
     :post-config
     (spacemacs/set-leader-keys-for-major-mode 'eww-mode
+      "vv" 'spacemacs/view-current-eww
       "vd" 'spacemacs/declutter-current-eww)))
 
 (defun eos/pre-init-pocket-reader ()

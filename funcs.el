@@ -98,12 +98,8 @@ Returns nil if none. Code from `decluter'"
         url
       (thing-at-point 'url))))
 
-(defun spacemacs/view-url-at-point (&optional arg)
-  "dispatch current url at point to appropriate handlers.
-When ARG then use `eww'."
-  (interactive "p")
-  (when-let* ((url (spacemacs//get-url-under-point))
-              (host (url-host (url-generic-parse-url url))))
+(defun spacemacs//view-url (url)
+  (let ((host (url-host (url-generic-parse-url url))))
     (message url)
     (cond
      ((string-match-p "news.ycombinator.com" host)
@@ -120,6 +116,17 @@ When ARG then use `eww'."
      (t
       (require 'declutter)
       (declutter-url url)))))
+
+(defun spacemacs/view-url-at-point (&optional arg)
+  "dispatch current url at point to appropriate handlers.
+When ARG then use `eww'."
+  (interactive "p")
+  (when-let* ((url (spacemacs//get-url-under-point)))
+    (spacemacs//view-url url)))
+
+(defun spacemacs/view-current-eww ()
+  (interactive)
+  (spacemacs//view-url (plist-get eww-data :url)))
 
 (defun spacemacs/declutter-current-eww ()
   (interactive)

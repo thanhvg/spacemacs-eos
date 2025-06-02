@@ -35,6 +35,7 @@
      :location (recipe
                 :fetcher github
                 :repo "thanhvg/counsel-wordnut"))
+    embark
     fold-this
     (google-suggest :location (recipe
                                :fetcher github
@@ -221,6 +222,11 @@ Each entry is either:
       "aww" 'spacemacs/view-url-at-point
       "awW" 'declutter)
     (setq declutter-engine 'rdrview)))
+
+(defun eos/pre-init-embark ()
+  (spacemacs|use-package-add-hook embark
+    :post-config
+    (keymap-set embark-url-map "r" #'declutter-under-point)))
 
 (defun eos/pre-init-elfeed ()
   (spacemacs|use-package-add-hook elfeed

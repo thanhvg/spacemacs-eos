@@ -215,7 +215,7 @@ Each entry is either:
 
 (defun eos/init-declutter ()
   (use-package declutter
-    ;; :commands (declutter-under-point)
+    :commands (declutter-under-point)
     :defer t
     :init
     (spacemacs/set-leader-keys

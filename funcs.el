@@ -112,15 +112,13 @@ Returns nil if none. Code from `decluter'"
      ((string-match-p ".reddit.com" host)
       (require 'reddigg)
       (reddigg-view-comments url))
-     ((eql arg 4) (eww url))
      (t
       (require 'declutter)
       (declutter-url url)))))
 
-(defun spacemacs/view-url-at-point (&optional arg)
-  "dispatch current url at point to appropriate handlers.
-When ARG then use `eww'."
-  (interactive "p")
+(defun spacemacs/view-url-at-point ()
+  "dispatch current url at point to appropriate handlers."
+  (interactive)
   (when-let* ((url (spacemacs//get-url-under-point)))
     (spacemacs//view-url url)))
 

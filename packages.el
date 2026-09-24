@@ -179,6 +179,10 @@ Each entry is either:
     ;;   :bindings
     ;;   "q" 'quit-window)
 
+    (spacemacs/set-leader-keys-for-major-mode 'virtual-comment-show-mode
+      "f" 'virtual-comment-show-set-filter
+      "F" 'virtual-comment-show-clear-filter)
+
     (evil-set-initial-state 'virtual-comment-show-mode-map 'normal)
     (evil-collection-define-key 'normal 'virtual-comment-show-mode-map
       (kbd "<backtab>") 'outline-show-all

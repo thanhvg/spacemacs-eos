@@ -59,10 +59,6 @@
     declutter
     elfeed
     eww
-    pocket-reader
-    ;; (reddigg :location (recipe
-    ;;                             :fetcher github
-    ;;                             :repo "thanhvg/emacs-reddigg"))
     reddigg)
 
   "The list of Lisp packages required by the eos layer.
@@ -242,10 +238,4 @@ Each entry is either:
       "vv" 'spacemacs/view-current-eww
       "vd" 'spacemacs/declutter-current-eww)))
 
-(defun eos/pre-init-pocket-reader ()
-  (spacemacs|use-package-add-hook pocket-reader
-    :post-config
-    (define-key pocket-reader-mode-map
-                (kbd "O")
-                #'spacemacs/pocket-view-with-declutter)))
 ;;; packages.el ends here

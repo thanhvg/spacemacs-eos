@@ -81,15 +81,6 @@ So the indent is respected."
       (message "Sent to declutter: %s" link)
       (declutter link))))
 
-(defun spacemacs/pocket-view-with-declutter ()
-  "Open current entry with `declutter'."
-  (interactive)
-  (when-let ((id (tabulated-list-get-id))
-             (item (ht-get pocket-reader-items id))
-             (url (pocket-reader--get-url item)))
-    (declutter url)
-    (message url)))
-
 (defun spacemacs//get-url-under-point ()
   "Try to figure out is there any URL under point.
 Returns nil if none. Code from `decluter'"
